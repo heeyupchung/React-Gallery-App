@@ -11,22 +11,28 @@ class SearchForm extends Component {
     this.setState({searchValue: e.target.value});
   }
 
+  // 
   handleSubmit = e => {
+    // prevents reload of the page
     e.preventDefault();
     let search = this.state.searchValue;
+    // fetches searched value from api
     this.props.onSearch(this.search.value);
+    // ensures the URL and UI are in sync; enables back, forward, and refresh buttons
     this.props.history.push(`/search/${search}`);
+    // resets the searchbox value
     e.currentTarget.reset();
   }
 
+  // checks to see if the component 
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-       if (this.props.location.pathname.includes('/search')) {
+      if (this.props.location.pathname.includes('/search')) {
           const searchText = this.props.location.pathname.replace('/search/', '');
           this.props.onSearch(searchText);
-       }
+      }
     }
- }
+  }
 
   render() {
     return(

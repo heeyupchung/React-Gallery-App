@@ -31,10 +31,12 @@ class App extends Component {
     }
   }
 
+  // immediately fetches data from the api as the page loads
   componentDidMount() {
     this.performSearch();
   }
 
+  //fetch the data from the api
   performSearch = (query) => {
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(response => this.setState({
@@ -51,6 +53,7 @@ class App extends Component {
       <div className='container'>
         <SearchForm onSearch={this.performSearch} />
         <Nav />
+        {/* ternary expression for whether the page is loaded or not */}
         { (this.state.loading) ? <Loading /> :
             <Switch>
               <Route exact path='/'><Redirect to="/cats" /></Route>

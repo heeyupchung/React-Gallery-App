@@ -6,6 +6,7 @@ class PhotoContainer extends Component {
   render() {
     const results = this.props.data;
     let photos;
+    // displays photos fetched if there is at least 1 photo. if not, NotFound is shown
     if (results.length > 0) {
       photos = results.map(photo => 
         <Photo
