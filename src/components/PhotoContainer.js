@@ -1,36 +1,32 @@
 import React, {Component} from 'react';
-import { getFID } from 'web-vitals';
 import Photo from './Photo';
-import NoPhotos from './NoPhotos';
 import NotFound from './NotFound';
 
 class PhotoContainer extends Component {
   render() {
+    const results = this.props.data;
+    let photos;
+    if (results.length > 0) {
+      photos = results.map(photo => 
+        <Photo
+          url={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
+          key={photo.id}
+          alt={photo.title}
+        />
+      );
+    } else {
+      photos = <NotFound />;
+    }
+  
     return(
       <div className="photo-container">
-        <h2>Results</h2>
+        <h2>{this.props.title}</h2>
         <ul>
-
-    
-          {/* const results = this.props.data;
-          let photos;
-          if (results.length > 0) {
-            photos = results.map(photo => 
-              <Photo
-                url={photo.images.fixed_height.url}
-                key={photo.id}
-              />
-            );
-          } else {
-            photos = <NoPhotos />;
-          } */}
-    
-          <NotFound />
+          {photos}
         </ul>
       </div>
     );
   }
 }
-
 
 export default PhotoContainer;
