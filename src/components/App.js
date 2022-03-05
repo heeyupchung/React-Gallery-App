@@ -52,6 +52,7 @@ class App extends Component {
     return(
     <BrowserRouter>
       <div className='container'>
+        <h1><strong>Fleeker</strong></h1>
         <SearchForm onSearch={this.performSearch} />
         <Nav />
         { (this.state.loading) ? <Loading /> :
