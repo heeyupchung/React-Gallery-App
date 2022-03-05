@@ -14,6 +14,7 @@ import PhotoContainer from './PhotoContainer';
 import apiKey from './Config';
 import Error from './Error';
 import Loading from './Loading';
+import Default from './Default';
 import {
   cats,
   dogs,
@@ -53,10 +54,9 @@ class App extends Component {
       <div className='container'>
         <SearchForm onSearch={this.performSearch} />
         <Nav />
-        {/* ternary expression for whether the page is loaded or not */}
         { (this.state.loading) ? <Loading /> :
             <Switch>
-              <Route exact path='/'><Redirect to="/cats" /></Route>
+              <Route exact path='/'><Default /></Route>
               <Route path='/search/:query' render={() => <PhotoContainer data={this.state.photos} title={this.state.title} /> } />
               <Route path='/cats' render={() => <PhotoContainer data={cats} title='cats' /> } />
               <Route path='/dogs' render={() => <PhotoContainer data={dogs} title='dogs' /> } />
