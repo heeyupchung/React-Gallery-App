@@ -57,12 +57,12 @@ class App extends Component {
         <Nav />
         { (this.state.loading) ? <Loading /> :
             <Switch>
-              <Route path={process.env.PUBLIC_URL + '/'}><Default /></Route>
+              <Route exact path={process.env.PUBLIC_URL + '/'}><Default /></Route>
               <Route path='/search/:query' render={() => <PhotoContainer data={this.state.photos} title={this.state.title} /> } />
               <Route path='/cats' render={() => <PhotoContainer data={cats} title='cats' /> } />
               <Route path='/dogs' render={() => <PhotoContainer data={dogs} title='dogs' /> } />
               <Route path='/computers' render={() => <PhotoContainer data={computers} title='computers' /> } />
-              <Route render={() => <Error />} />
+              <Route render={() => <Default />} />
             </Switch>
         }
       </div>
