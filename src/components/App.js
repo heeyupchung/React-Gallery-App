@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
-  Switch,
-  Redirect
+  Switch
 } from 'react-router-dom';
 
 // App Components
@@ -50,7 +49,7 @@ class App extends Component {
 
   render() {
     return(
-    <BrowserRouter>
+    <HashRouter>
       <div className='container'>
         <h1>FLEEKER</h1>
         <hr></hr>
@@ -72,8 +71,7 @@ class App extends Component {
           <p>&copy; Hee Yup Chung</p>
         </div>
       </div>
-
-    </BrowserRouter>
+    </HashRouter>
     )
   }
 };
