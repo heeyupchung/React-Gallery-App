@@ -68,7 +68,7 @@ class App extends Component {
         }
         <hr></hr>
         <div className='footer'>
-          <p>&copy; Hee Yup Chung</p>
+          <p>&copy; 2022 Hee Yup Chung</p>
         </div>
       </div>
     </HashRouter>
