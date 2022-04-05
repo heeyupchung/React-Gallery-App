@@ -15,6 +15,7 @@ class PhotoContainer extends Component {
           alt={photo.title}
         />
       );
+      // document.body.style.backgroundImage = `url("https://live.staticflickr.com/${results[0].server}/${results[0].id}_${results[0].secret}.jpg")`;
     } else {
       photos = <NotFound />;
     }

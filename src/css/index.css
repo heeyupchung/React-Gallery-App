@@ -1,14 +1,19 @@
 body {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Courier New', monospace;
   color: #3f4850;
-  background-color: lightsteelblue;
+  background-image: url('../images/minimal.jpg');
+  background-size: fill;
+}
+
+h1 {
+  font-size: 2.5em;
 }
 
 h2 {
   font-size: 2em;
   margin: 52px 0 40px;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 ul {
@@ -77,7 +82,8 @@ input {
   width: 220px;
   height: 165px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  border-radius: 7%;
 }
 
 .photo-container ul img {
@@ -92,6 +98,15 @@ input {
 
 .photo-container .not-found {
   width: 100%;
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footer {
+  text-align: right;
 }
 
 @media only screen and (max-width: 767px)  {
